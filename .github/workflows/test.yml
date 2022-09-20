@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3   
         with:
           repository: FFmpeg/FFmpeg
-          path: ./Ffmpeg
+          path: $HOME/Ffmpeg
       - name: create LD_LIBRARY_PATH
         run: mkdir -p $HOME/ld_library_path $HOME/Ffmpeg
       - name: Build ffmpeg
