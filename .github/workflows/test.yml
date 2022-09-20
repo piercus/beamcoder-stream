@@ -15,13 +15,13 @@ jobs:
         uses: actions/checkout@v3   
         with:
           repository: FFmpeg/FFmpeg
-          path: $HOME/Ffmpeg
+          path: Ffmpeg
       - name: create LD_LIBRARY_PATH
         run: mkdir -p $HOME/ld_library_path
-      - name: ls $HOME/Ffmpeg
-        run: ls $HOME/Ffmpeg
+      - name: ls Ffmpeg
+        run: ls Ffmpeg
       - name: Build ffmpeg
-        run: cd  $HOME/Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=$HOME/ld_library_path --enable-libx264 && make && make install && ldconfig
+        run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=$HOME/ld_library_path --enable-libx264 && make && make install && ldconfig
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
