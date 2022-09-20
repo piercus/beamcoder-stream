@@ -1,0 +1,45 @@
+{
+  "name": "beamcoder-stream",
+  "version": "1.0.0",
+  "engines":{
+    "node" : ">=16.0.0"
+  },
+  "description": "Node.js Stream API for beamcoder",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "ava": {
+    "files": ["test/test.js"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/beamcoder-stream.git"
+  },
+  "keywords": [
+    "beamcoder",
+    "stream",
+    "ffmpeg",
+    "encoder",
+    "decoder"
+  ],
+  "xo": {
+    "rules": {
+      "unicorn/prefer-module": 0
+    }
+  },
+  "author": "Pierre Colle <piercus@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/piercus/beamcoder-stream/issues"
+  },
+  "homepage": "https://github.com/piercus/beamcoder-stream#readme",
+  "devDependencies": {
+    "ava": "^4.3.3",
+    "semantic-release": "^19.0.5",
+    "xo": "^0.52.3"
+  },
+  "dependencies": {
+    "beamcoder": "^0.7.1"
+  }
+}
