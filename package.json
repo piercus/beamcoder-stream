@@ -25,7 +25,9 @@
   ],
   "xo": {
     "rules": {
-      "unicorn/prefer-module": 0
+      "unicorn/prefer-module": 0,
+      "ava/prefer-async-await": 0,
+      "camelcase": 0
     }
   },
   "author": "Pierre Colle <piercus@gmail.com>",
