@@ -18,8 +18,8 @@ jobs:
           path: Ffmpeg
       - name: create LD_LIBRARY_PATH
         run: mkdir -p $HOME/ld_library_path
-      - name: ls Ffmpeg
-        run: ls Ffmpeg
+      - name: Install Ffmpeg aptitude deps
+        run: sudo apt-get install -y yasm
       - name: Build ffmpeg
         run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=$HOME/ld_library_path --enable-libx264 && make && make install && ldconfig
       - name: Use Node.js 16
