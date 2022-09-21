@@ -1,8 +1,8 @@
 {
   "name": "beamcoder-stream",
   "version": "1.0.0",
-  "engines":{
-    "node" : ">=16.0.0"
+  "engines": {
+    "node": ">=16.0.0"
   },
   "description": "Node.js Stream API for beamcoder",
   "main": "lib/index.js",
@@ -10,7 +10,9 @@
     "test": "xo && ava"
   },
   "ava": {
-    "files": ["test/test.js"]
+    "files": [
+      "test/test.js"
+    ]
   },
   "repository": {
     "type": "git",

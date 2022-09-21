@@ -21,7 +21,7 @@ jobs:
       - name: Install Ffmpeg aptitude deps
         run: sudo apt-get install -y yasm libx264-dev
       - name: Build ffmpeg
-        run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=${{ github.workspace }}/ld_library_path --enable-libx264 && make && make install && ldconfig
+        run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=${{ github.workspace }}/ld_library_path --enable-libx264 && make && sudo make install && sudo ldconfig
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
