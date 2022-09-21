@@ -7,7 +7,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-          LD_LIBRARY_PATH: $HOME/ld_library_path:$LD_LIBRARY_PATH
+          LD_LIBRARY_PATH: ${{ github.workspace }}/ld_library_path
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,16 +17,16 @@ jobs:
           repository: FFmpeg/FFmpeg
           path: Ffmpeg
       - name: create LD_LIBRARY_PATH
-        run: mkdir -p $HOME/ld_library_path
+        run: mkdir -p ${{ github.workspace }}/ld_library_path
       - name: Install Ffmpeg aptitude deps
         run: sudo apt-get install -y yasm libx264-dev
       - name: Build ffmpeg
-        run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=$HOME/ld_library_path --enable-libx264 && make && sudo make install && sudo ldconfig
+        run: cd  Ffmpeg && ./configure --enable-gpl --enable-shared --shlibdir=${{ github.workspace }}/ld_library_path --enable-libx264 && make && sudo make install && sudo ldconfig
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: echo $LD_LIBRARY_PATH
-      - run: ls $HOME/ld_library_path
+      - run: echo ${{ github.workspace }}/ld_library_path
+      - run: ls ${{ github.workspace }}/ld_library_path
       - run: npm ci
       - run: npm test

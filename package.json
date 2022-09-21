@@ -5,7 +5,7 @@
     "node" : ">=16.0.0"
   },
   "description": "Node.js Stream API for beamcoder",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "xo && ava"
   },
