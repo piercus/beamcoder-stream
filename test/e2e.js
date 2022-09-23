@@ -21,7 +21,7 @@ test('e2e', t => {
 
 	const muxerStream = createMuxerWriteStream({
 		filename: './tmp/file.mp4',
-		streams: encoderStream.encoder.then(parameters_ => [{
+		stream: encoderStream.encoder.then(parameters_ => ({
 			name: 'h264',
 			time_base: parameters_.time_base,
 			encoderName: 'libx264',
@@ -32,7 +32,7 @@ test('e2e', t => {
 				color_space: parameters_.color_space,
 				sample_aspect_ratio: [1, 1],
 			},
-		}]),
+		})),
 	}, streamOptions);
 
 	const stream = demuxerStream.pipe(filterStream).pipe(decoderStream).pipe(encoderStream).pipe(muxerStream);
