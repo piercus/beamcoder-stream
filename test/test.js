@@ -69,7 +69,7 @@ test('demuxer-decoder-encoder', t => {
 			n++;
 		});
 	}).then(() => {
-		t.is(n, 506);
+		t.true(n > 500 && n < 510);
 	});
 });
 
@@ -171,6 +171,6 @@ test('demuxer-decoder-filterer-encoder', t => {
 			n++;
 		});
 	}).then(() => {
-		t.is(n, 506);
+		t.true(n > 500 && n < 510);
 	});
 });
