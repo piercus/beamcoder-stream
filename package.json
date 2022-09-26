@@ -10,6 +10,7 @@
     "test": "xo && ava"
   },
   "ava": {
+    "timeout": "5m",
     "files": [
       "test/test.js"
     ]
