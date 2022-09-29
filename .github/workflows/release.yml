@@ -18,8 +18,6 @@ jobs:
           node-version: 16
       - name: Authenticate with private NPM package
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - run: mkdir tmp
-      - run: npm ci
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
         env:
